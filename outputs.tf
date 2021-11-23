@@ -1,8 +1,11 @@
-output "public_subnet_ids" {
-  value = module.count.public_subnet_ids
+# output "public_1a_id" {
+#   value = module.for_each.public_1a_id
+# }
+
+output "public_1c_id" {
+  value = module.for_each.public_1c_id
 }
 
-# public_subnet_ids = [
-#   "subnet-0d64d8f78b6b87e92",
-#   "subnet-0a79fd494fbcbf3f7",
-# ]
+output "public_ids" {
+  value = module.for_each.public_ids
+}
