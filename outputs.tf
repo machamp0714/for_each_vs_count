@@ -1,6 +1,6 @@
-output "public_subnet_ids" {
-  value = module.count.public_subnet_ids
-}
+# output "public_subnet_ids" {
+#   value = module.count.public_subnet_ids
+# }
 
 # public_subnet_ids = [
 #   "subnet-0d64d8f78b6b87e92",
