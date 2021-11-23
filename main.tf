@@ -13,6 +13,17 @@ provider "aws" {
 
 locals {
   availability_zone = "ap-northeast-1"
+
+  public_subnets = {
+    "public_subnet_1a" = {
+      cidr_block        = "10.0.64.0/24"
+      availability_zone = "ap-northeast-1a"
+    }
+    "public_subnet_1c" = {
+      cidr_block        = "10.0.65.0/24"
+      availability_zone = "ap-northeast-1c"
+    }
+  }
 }
 
 module "count" {
