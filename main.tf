@@ -12,16 +12,14 @@ provider "aws" {
 }
 
 locals {
-  availability_zone = "ap-northeast-1"
+  region = "ap-northeast-1"
 
   public_subnets = {
-    "public_subnet_1a" = {
+    ap-northeast-1a = {
       cidr_block        = "10.0.64.0/24"
-      availability_zone = "ap-northeast-1a"
     }
-    "public_subnet_1c" = {
+    ap-northeast-1c = {
       cidr_block        = "10.0.65.0/24"
-      availability_zone = "ap-northeast-1c"
     }
   }
 }
@@ -31,7 +29,7 @@ module "count" {
 
   cidr_block         = "10.0.0.0/16"
   public_blocks      = ["10.0.1.0/24", "10.0.2.0/24"]
-  availability_zones = ["${local.availability_zone}a", "${local.availability_zone}c"]
+  availability_zones = ["${local.region}a", "${local.region}c"]
 }
 
 module "for_each" {
